@@ -3,9 +3,17 @@
   padding: 0;
   box-sizing: border-box;
   background-color: #6196a6;
+  font-family: "Roboto", "sans-sarif";
+  font-weight: 300;
 }
 .b {
-  border: 4px solid rgb(149, 147, 14);
+  /* border: 4px solid rgb(149, 147, 14); */
+  border: 4px solid black;
+}
+.heading {
+  margin: auto;
+  text-align: center;
+  padding-bottom: 30px;
 }
 .chess-board {
   margin: auto;
@@ -14,7 +22,8 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  color: rgb(111, 111, 18);
+  color: black;
+  font-size: small;
 }
 
 .sq {
@@ -24,6 +33,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  border: 1.5px solid black;
 }
 .box-text {
   top: 0;
@@ -34,21 +44,41 @@
 
 .white-piece {
   background-color: transparent;
-  color: #aaa;
-  font-size: 3.5rem;
+  color: white;
+  font-size: 4em;
 }
 .black-piece {
   background-color: transparent;
   color: black;
-  font-size: 3.5rem;
+  font-size: 4em;
 }
 .black {
-  background-color: #333a73;
+  background-color: #87a922;
 }
 
 .white {
-  background-color: white;
+  background-color: #d4e7c5;
 }
+
+.outline {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
 /* #a1 {
   background-color: blue;
 } */
+
+@media (max-width: 670px) {
+  /* … */
+  .chess-board {
+    width: 470px;
+    height: 470px;
+  }
+  .white-piece {
+    font-size: 2.5em;
+  }
+  .black-piece {
+    font-size: 2.5em;
+  }
+}
