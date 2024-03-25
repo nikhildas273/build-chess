@@ -1,38 +1,38 @@
+import { rules } from "./rules.js";
 const squares = document.querySelectorAll(".sq");
-// let pawn1 = document.querySelector("#a7").firstElementChild;
+let clickCount = 0;
+let move_piece = null;
 
-// console.log(pawn1);
+// chatGpt approach to move pieces
 
-// let loc = document.querySelector("#a5");
-// loc.appendChild(pawn1);
-
-// select element to move
-let let_move;
 squares.forEach((square) => {
   square.addEventListener("click", (e) => {
-    let_move = e.currentTarget.innerHTML;
-    console.log(let_move);
-    // if (let_move) {
-    //   squares.forEach((square) => {
-    //     square.addEventListener("click", (e) => {
-    //       console.log(e.target.appendChild(let_move));
-    //     });
-    //   });
-    // } else {
-    //   console.log("no element selected");
-    // }
+    clickCount++;
+    if (clickCount === 1) {
+      // select piece to move
+      move_piece = e.currentTarget;
+      if (move_piece.childElementCount == 1) {
+        // if user is clicking in empty box then don't do all this
+        //console.log("The box is empty");
+        clickCount = 0;
+      } else {
+        const [curr_piece, start_pos] =
+          move_piece.firstElementChild.id.split("_");
+        const curr_pos = move_piece.lastElementChild.innerText;
+        //console.log(curr_piece, start_pos, curr_pos);
+        possible_move = rules(curr_piece, start_pos, curr_pos);
+        console.log(possible_move);
+      }
+    } else if (clickCount === 2) {
+      // move to the position
+      if (move_piece.firstElementChild) {
+        e.currentTarget.insertAdjacentElement(
+          "afterbegin",
+          move_piece.firstElementChild
+        );
+      }
+
+      clickCount = 0;
+    }
   });
 });
-
-// Try to get location using onClick from user
-
-// console.log(squares);
-if (let_move !== null) {
-  squares.forEach((square) => {
-    square.addEventListener("click", (e) => {
-      e.currentTarget.innerHTML = let_move;
-    });
-  });
-} else {
-  console.log("no element selected");
-}

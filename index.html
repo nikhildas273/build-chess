@@ -17,6 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+
     <title>builD cHess</title>
   </head>
   <body>
@@ -24,11 +25,11 @@
 
     <div class="chess-board b">
       <div id="a8" class="white sq">
-        <i class="fas fa-chess-rook fa-flip-both black-piece"></i>
+        <i id="rook_a8" class="fas fa-chess-rook fa-flip-both black-piece"></i>
         <p class="box-text">a8</p>
       </div>
       <div id="a7" class="black sq">
-        <i class="fas fa-chess-pawn fa-flip-both black-piece"></i>
+        <i id="pawn_a7" class="fas fa-chess-pawn fa-flip-both black-piece"></i>
         <p class="box-text">a7</p>
       </div>
       <div id="a6" class="white sq"><p class="box-text">a6</p></div>
@@ -36,19 +37,22 @@
       <div id="a4" class="white sq"><p class="box-text">a4</p></div>
       <div id="a3" class="black sq"><p class="box-text">a3</p></div>
       <div id="a2" class="white sq">
-        <i class="fas fa-chess-pawn white-piece outline"></i>
+        <i id="pawn_a2" class="fas fa-chess-pawn white-piece outline"></i>
         <p class="box-text">a2</p>
       </div>
       <div id="a1" class="black sq">
-        <i class="fas fa-chess-rook white-piece outline"></i>
+        <i id="rook_a1" class="fas fa-chess-rook white-piece outline"></i>
         <p class="box-text">a1</p>
       </div>
       <div id="b8" class="black sq">
-        <i class="fas fa-chess-knight fa-flip-both black-piece"></i>
+        <i
+          id="knight_b8"
+          class="fas fa-chess-knight fa-flip-both black-piece"
+        ></i>
         <p class="box-text">b8</p>
       </div>
       <div id="b7" class="white sq">
-        <i class="fas fa-chess-pawn fa-flip-both black-piece"></i>
+        <i class="fas fa-chess-pawn fa-flip-both black-piece" id="pawn_b7"></i>
         <p class="box-text">b7</p>
       </div>
       <div id="b6" class="black sq"><p class="box-text">b6</p></div>
@@ -56,39 +60,45 @@
       <div id="b4" class="black sq"><p class="box-text">b4</p></div>
       <div id="b3" class="white sq"><p class="box-text">b3</p></div>
       <div id="b2" class="black sq">
-        <i class="fas fa-chess-pawn white-piece outline"></i>
+        <i id="pawn_b2" class="fas fa-chess-pawn white-piece outline"></i>
         <p class="box-text">b2</p>
       </div>
       <div id="b1" class="white sq">
-        <i class="fas fa-chess-knight white-piece outline"></i>
+        <i id="knight_b1" class="fas fa-chess-knight white-piece outline"></i>
         <p class="box-text">b1</p>
       </div>
       <div id="c8" class="white sq">
-        <i class="fas fa-chess-bishop fa-flip-both black-piece"></i>
+        <i
+          class="fas fa-chess-bishop fa-flip-both black-piece"
+          id="bishop_c8"
+        ></i>
         <p class="box-text">c8</p>
       </div>
       <div id="c7" class="black sq">
-        <i class="fas fa-chess-pawn fa-flip-both black-piece"></i>
+        <i id="pawn_c7" class="fas fa-chess-pawn fa-flip-both black-piece"></i>
         <p class="box-text">c7</p>
       </div>
       <div id="c6" class="white sq"><p class="box-text">c6</p></div>
       <div id="c5" class="black sq"><p class="box-text">c5</p></div>
       <div id="c4" class="white sq"><p class="box-text">c4</p></div>
       <div id="c3" class="black sq"><p class="box-text">c3</p></div>
-      <div id="c7" class="white sq">
-        <i class="fas fa-chess-pawn white-piece outline"></i>
+      <div id="c2" class="white sq">
+        <i class="fas fa-chess-pawn white-piece outline" id="pawn_c2"></i>
         <p class="box-text">c2</p>
       </div>
       <div id="c1" class="black sq">
-        <i class="fas fa-chess-bishop white-piece outline"></i>
+        <i id="bishop_c1" class="fas fa-chess-bishop white-piece outline"></i>
         <p class="box-text">c1</p>
       </div>
       <div id="d8" class="black sq">
-        <i class="fas fa-chess-queen fa-flip-both black-piece"></i>
+        <i
+          class="fas fa-chess-queen fa-flip-both black-piece"
+          id="queen_d8"
+        ></i>
         <p class="box-text">d8</p>
       </div>
       <div id="d7" class="white sq">
-        <i class="fas fa-chess-pawn fa-flip-both black-piece"></i>
+        <i class="fas fa-chess-pawn fa-flip-both black-piece" id="pawn_d7"></i>
         <p class="box-text">d7</p>
       </div>
       <div id="d6" class="black sq"><p class="box-text">d6</p></div>
@@ -96,19 +106,19 @@
       <div id="d4" class="black sq"><p class="box-text">d4</p></div>
       <div id="d3" class="white sq"><p class="box-text">d3</p></div>
       <div id="d2" class="black sq">
-        <i class="fas fa-chess-pawn white-piece outline"></i>
+        <i class="fas fa-chess-pawn white-piece outline" id="pawn_d2"></i>
         <p class="box-text">d2</p>
       </div>
       <div id="d1" class="white sq">
-        <i class="fas fa-chess-queen white-piece outline"></i>
+        <i class="fas fa-chess-queen white-piece outline" id="queen_d1"></i>
         <p class="box-text">d1</p>
       </div>
       <div id="e8" class="white sq">
-        <i class="fas fa-chess-king fa-flip-both black-piece"></i>
+        <i class="fas fa-chess-king fa-flip-both black-piece" id="king_e8"></i>
         <p class="box-text">e8</p>
       </div>
       <div id="e7" class="black sq">
-        <i class="fas fa-chess-pawn fa-flip-both black-piece"></i>
+        <i class="fas fa-chess-pawn fa-flip-both black-piece" id="pawn_e7"></i>
         <p class="box-text">e7</p>
       </div>
       <div id="e6" class="white sq"><p class="box-text">e6</p></div>
@@ -116,19 +126,22 @@
       <div id="e4" class="white sq"><p class="box-text">e4</p></div>
       <div id="e3" class="black sq"><p class="box-text">e3</p></div>
       <div id="e2" class="white sq">
-        <i class="fas fa-chess-pawn white-piece outline"></i>
+        <i class="fas fa-chess-pawn white-piece outline" id="pawn_e2"></i>
         <p class="box-text">e2</p>
       </div>
       <div id="e1" class="black sq">
-        <i class="fas fa-chess-king white-piece outline"></i>
+        <i class="fas fa-chess-king white-piece outline" id="king_e1"></i>
         <p class="box-text">e1</p>
       </div>
       <div id="f8" class="black sq">
-        <i class="fas fa-chess-bishop fa-flip-both black-piece"></i>
+        <i
+          id="bishop_f8"
+          class="fas fa-chess-bishop fa-flip-both black-piece"
+        ></i>
         <p class="box-text">f8</p>
       </div>
       <div id="f7" class="white sq">
-        <i class="fas fa-chess-pawn fa-flip-both black-piece"></i>
+        <i id="pawn_f7" class="fas fa-chess-pawn fa-flip-both black-piece"></i>
 
         <p class="box-text">f7</p>
       </div>
@@ -137,19 +150,22 @@
       <div id="f4" class="black sq"><p class="box-text">f4</p></div>
       <div id="f3" class="white sq"><p class="box-text">f3</p></div>
       <div id="f2" class="black sq">
-        <i class="fas fa-chess-pawn white-piece outline"></i>
+        <i id="pawn_f2" class="fas fa-chess-pawn white-piece outline"></i>
         <p class="box-text">f2</p>
       </div>
       <div id="f1" class="white sq">
-        <i class="fas fa-chess-bishop white-piece outline"></i>
+        <i id="bishop_f1" class="fas fa-chess-bishop white-piece outline"></i>
         <p class="box-text">f1</p>
       </div>
       <div id="g8" class="white sq">
-        <i class="fas fa-chess-knight fa-flip-both black-piece"></i>
+        <i
+          id="knight_g8"
+          class="fas fa-chess-knight fa-flip-both black-piece"
+        ></i>
         <p class="box-text">g8</p>
       </div>
       <div id="g7" class="black sq">
-        <i class="fas fa-chess-pawn fa-flip-both black-piece"></i>
+        <i id="pawn_g7" class="fas fa-chess-pawn fa-flip-both black-piece"></i>
         <p class="box-text">g7</p>
       </div>
       <div id="g6" class="white sq"><p class="box-text">g6</p></div>
@@ -157,19 +173,19 @@
       <div id="g4" class="white sq"><p class="box-text">g4</p></div>
       <div id="g3" class="black sq"><p class="box-text">g3</p></div>
       <div id="g2" class="white sq">
-        <i class="fas fa-chess-pawn white-piece outline"></i>
+        <i class="fas fa-chess-pawn white-piece outline" id="pawn_g2"></i>
         <p class="box-text">g2</p>
       </div>
       <div id="g1" class="black sq">
-        <i class="fas fa-chess-knight white-piece outline"></i>
+        <i class="fas fa-chess-knight white-piece outline" id="knight_g1"></i>
         <p class="box-text">g1</p>
       </div>
       <div id="h8" class="black sq">
-        <i class="fas fa-chess-rook fa-flip-both black-piece"></i>
+        <i id="rook_h8" class="fas fa-chess-rook fa-flip-both black-piece"></i>
         <p class="box-text">h8</p>
       </div>
       <div id="h7" class="white sq">
-        <i class="fas fa-chess-pawn black-piece"></i>
+        <i class="fas fa-chess-pawn black-piece" id="pawn_h7"></i>
         <p class="box-text">h7</p>
       </div>
       <div id="h6" class="black sq"><p class="box-text">h6</p></div>
@@ -177,14 +193,14 @@
       <div id="h4" class="black sq"><p class="box-text">h4</p></div>
       <div id="h3" class="white sq"><p class="box-text">h3</p></div>
       <div id="h2" class="black sq">
-        <i class="fas fa-chess-pawn white-piece outline"></i>
+        <i class="fas fa-chess-pawn white-piece outline" id="pawn_h2"></i>
         <p class="box-text">h2</p>
       </div>
       <div id="h1" class="white sq">
-        <i class="fas fa-chess-rook white-piece outline"></i>
+        <i class="fas fa-chess-rook white-piece outline" id="rook_h1"></i>
         <p class="box-text">h1</p>
       </div>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js" type="module"></script>
   </body>
 </html>
