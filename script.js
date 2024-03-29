@@ -1,8 +1,9 @@
-import { rules } from "./rules.js";
+import { valid_rook_moves } from "./rules.js";
 const squares = document.querySelectorAll(".sq");
 let clickCount = 0;
 let move_piece = null;
-
+// let possible_move = [];
+let possible_move = {}; // key;value pair,a5:true then that means a5 is
 // chatGpt approach to move pieces
 
 squares.forEach((square) => {
@@ -19,19 +20,24 @@ squares.forEach((square) => {
         const [curr_piece, start_pos] =
           move_piece.firstElementChild.id.split("_");
         const curr_pos = move_piece.lastElementChild.innerText;
-        //console.log(curr_piece, start_pos, curr_pos);
-        possible_move = rules(curr_piece, start_pos, curr_pos);
-        console.log(possible_move);
       }
     } else if (clickCount === 2) {
-      // move to the position
-      if (move_piece.firstElementChild) {
-        e.currentTarget.insertAdjacentElement(
-          "afterbegin",
-          move_piece.firstElementChild
-        );
+      // move to the position coz user has selected a valid empty sqaure.
+      console.log(
+        possible_move.includes(e.currentTarget.lastElementChild.textContent),
+        possible_move
+      );
+      // checking if the final position of the piece we select is a valid move for the piece.
+      if (
+        possible_move.includes(e.currentTarget.lastElementChild.textContent)
+      ) {
+        if (move_piece.firstElementChild) {
+          e.currentTarget.insertAdjacentElement(
+            "afterbegin",
+            move_piece.firstElementChild
+          );
+        }
       }
-
       clickCount = 0;
     }
   });
