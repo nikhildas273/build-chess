@@ -7,3 +7,5 @@ Timelog:
 - 23rd March: Got the idea while talking to nikhil to build something.
 
 - 24th March: Planning, environment setup and initial designs and brainstorming.
+
+- 29th March: Made valid_move() function and redesigned the data structure for chess board and chess sqaure.
